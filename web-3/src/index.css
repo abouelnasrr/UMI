@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset for pixel-perfect */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+html[dir="rtl"] {
+  direction: rtl;
+}
+html {
+  scroll-behavior: smooth;
+}
+html[dir="rtl"] body {
+  text-align: right;
+  
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s ease forwards;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.input {
+  @apply w-full bg-white dark:bg-black border border-gray-300 dark:border-gray-700 
+  text-black dark:text-white rounded-lg px-4 py-3 text-sm outline-none 
+  focus:border-black dark:focus:border-white 
+  transition-all duration-300 focus:shadow-md;
+}
