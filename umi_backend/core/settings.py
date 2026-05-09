@@ -56,7 +56,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://front123-theta.vercel.app"
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://front123-theta.vercel.app"
+]
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

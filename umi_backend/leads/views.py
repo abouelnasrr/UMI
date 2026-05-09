@@ -1,7 +1,9 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import LeadSerializer
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 @api_view(["POST"])
 def create_lead(request):
     serializer = LeadSerializer(data=request.data)
