@@ -47,7 +47,7 @@ function Contact() {
     setLoading(true);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/leads/create/`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL.replace(/\/$/, "")}/api/leads/create/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
